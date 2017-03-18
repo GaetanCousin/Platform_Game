@@ -1,14 +1,22 @@
+var map = new Map("premiere");
+
+
 window.onload = function() {
 
-	var ts = new Tileset("basique.png");
-
+	
 
 	var canvas = document.getElementById('canvas');
+
 	var ctx = canvas.getContext('2d');
 
+	console.log('this dans le rpg : ' + this);
 
-	var map = new Map("premiere", ctx, function() {
-		canvas.height = this.getHauteur * 32;
-		canvas.width  = this.getLargeur * 32;		
-	});
-}
+
+	console.log(map);
+
+    canvas.height = map.getHauteur() * 32;
+	canvas.width  = map.getLargeur() * 32;
+
+	map.dessinerMap(ctx);
+
+	}

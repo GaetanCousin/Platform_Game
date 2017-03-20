@@ -1,22 +1,34 @@
-var map = new Map("premiere");
-
-
 window.onload = function() {
+
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');	
+
+	//map.dessinerMap(ctx);
+
+	var map = new Map("deuxieme", ctx);
 
 	
 
-	var canvas = document.getElementById('canvas');
 
-	var ctx = canvas.getContext('2d');
+	/*var map = new Map("deuxieme", canvas, function() {
+		console.log('this = ');
+		console.log(this);
+		console.log('map  =');
+		console.log(map);*/
 
-	console.log('this dans le rpg : ' + this);
+	// map.dessinerMap(ctx);
+	setTimeout(function(){ 
+		map.dessinerMap(ctx);
+		console.log('apres la fonction dessinerMap');
+	}, 100);
+
+	
 
 
-	console.log(map);
+	//});
 
-    canvas.height = map.getHauteur() * 32;
-	canvas.width  = map.getLargeur() * 32;
+	//setTimeout(function(){});
 
-	map.dessinerMap(ctx);
+
 
 	}

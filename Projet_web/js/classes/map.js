@@ -20,7 +20,15 @@ function Map(nom, ctx) {
 }
 
 /*function Map(nom, canvas, callback) {
-    // récupération des données du JSON avec le callback
+    // récupération des données dvar start = Promise.resolve(MonArguments);
+	 *
+	 * start
+	 * 		.then (loadMap);
+	 * 		.then (loadImage);
+	 * 		.then (ImgArray => { 
+	 * 			var div = document.getElementById('images');
+	 * 			ImgArray.forEach(img) => { div.appendChild(img) ;
+	 * u JSON avec le callback
     this.load(nom, function(mapData) { 
 	    this.tileset = new Tileset(mapData.tileset);
 	    this.terrain = mapData.terrain;

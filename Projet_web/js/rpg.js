@@ -1,69 +1,24 @@
-
-
-
 window.onload = function() {
 
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext('2d');	
 
-	//map.dessinerMap(ctx);
+    var start = Promise.resolve(ctx);
 
-	var map = new Map("deuxieme", ctx);
+    start
+        .then (Map.loadMap)
+        .then( Tileset.loadTileset)
+        .then ((map) => {
+				return map.dessinerMap();
+				})
+        .then (console.log('fin'));
 
 	
- function(nom, callback){
-	// Création de l'objet XmlHttpRequest
-	let xhr = new XMLHttpRequest();
 
-	// Une fois le fichier chargé, on parse
-	xhr.addEventListener("readystatechange", function (ev) {
-	if (xhr.status == 200 && xhr.readyState == 4) {
-	        var mapDa
-
-	/*var map = new Map("deuxieme", canvas, function() {
-		console.log('this = ');
-		console.log(this);
-		console.log('map  =');
-		console.log(map);*/
- function(nom, callback){
-	// Création de l'objet XmlHttpRequest
-	let xhr = new XMLHttpRequest();
-
-	// Une fois le fichier chargé, on parse function(nom, callback){
-	// Création de l'objet XmlHttpRequest
-	let xhr = new XMLHttpRequest();
-
-	// Une fois le fichier chargé, on parse
-	xhr.addEventListener("readystatechange", function (ev) {
-	if (xhr.status == 200 && xhr.readyState == 4) {
-	        var mapDa function(nom, callback){
-	// Création de l'objet XmlHttpRequest
-	let xhr = new XMLHttpRequest();
-
-	// Une fois le fichier chargé, on parse
-	xhr.addEventListener("readystatechange", function (ev) {
-	if (xhr.status == 200 && xhr.readyState == 4) {
-	        var mapDa
-	xhr.addEventListener("readystatechange", function (ev) {
-	if (xhr.status == 200 && xhr.readyState == 4) {
-	        var mapDa
-	map.dessinerMap(ctx);
-	
-	/*
-	setTimeout(function(){ 
-		map.dessinerMap(ctx);
-		console.log('apres la fonction dessinerMap');
-	}, 100);
-*/
-	
-
-
-	//});
-
-	//setTimeout(function(){});
+}
 	
 	
-	/*
+	/*  EXEMPLE DE PROMISE
 	 * 
 	 * 
 	 * function fi (di - 1 ) {

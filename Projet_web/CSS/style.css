@@ -1,32 +1,22 @@
-/** canvas {
-	border: 1px solid black;
-	position: relative;
-    overflow: hidden;
-	background-image: url('./maps/background_nuage.jpg');
-} 
-
-
-    width: 630px; 
-    height: 378px; **/
-
-
 #window {
-
     position: relative;
     overflow: hidden;
-    background-image: url('./../tilesets/backgound_nuage.jpg');
 }
 
-#canvas {
-    position: absolute; 
+#canvas_map {
+    background-image: url('./../images/background-4.png');
+    background-position:;
+    border: 3px solid black;
+    position: relative; 
     left: 0; 
     top: 0; 
     z-index: 0;
 }
 
-#canvas_character {
+#canvas_personnage {
+    border: 3px solid black;
     position: absolute; 
     left: 0; 
     top: 0; 
-    z-index: 1;
+    z-index: 0;
 }

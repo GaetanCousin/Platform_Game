@@ -1,5 +1,7 @@
 class Deplacement {
 
+
+// Gestion des evenements en fonction de la touche du clavier pressé
 static keyboardInput(event, player, down) {
 
         // Gauche

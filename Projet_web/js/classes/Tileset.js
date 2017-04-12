@@ -1,5 +1,6 @@
 function Tileset() {
-	// Chargement de l'image dans l'attribut image
+	// on creer un nouvel objet image
+	// cet objet recevra la source de notre image après le loadTileset
 	this.image = new Image();
 };
 
@@ -13,18 +14,21 @@ Tileset.prototype.loadTileset = function (url) {
 
 				ok();
             }
-		this.image.src = "tilesets/" + url;
+		this.image.src = "tilesets/" + url; // On récupère le bon tileset grace à l'url
 	});
 };
 
 
 // Méthode de dessin du tile numéro "numero" dans le contexte 2D "context" aux coordonnées x et y
 Tileset.prototype.dessinerTile = function(numero, context, xDestination, yDestination, largeur) {
-	var xSourceEnTiles = numero % 10;
-	if(xSourceEnTiles == 0) xSourceEnTiles = largeur;
-	var ySourceEnTiles = Math.ceil(numero / largeur);
-	var xSource = (xSourceEnTiles - 1) * 70;
-	var ySource = (ySourceEnTiles - 1) * 70;
+	var xSourceEnTiles = numero % 10; // modulo 10 car on a que 10 tiles par ligne dans notre tileset
+	
+	if(xSourceEnTiles == 0) xSourceEnTiles = largeur; // on prend la derniere tile (la 10e) si notre numero > 10
+	var ySourceEnTiles = Math.ceil(numero / largeur); // on récupère la ligne
+	var xSource = (xSourceEnTiles - 1) * 70; // Valeur en pixel
+	var ySource = (ySourceEnTiles - 1) * 70; // valeur en pixel
+
+	// On dessine la tile correspondande à la destination indiqué 
 	context.drawImage(this.image, xSource, ySource, 70, 70, xDestination, yDestination, 70, 70);
 };
 
